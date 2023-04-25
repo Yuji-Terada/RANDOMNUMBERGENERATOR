@@ -31,7 +31,7 @@ $('#generate').click( function(){
     allarraystr = ""
 
     for(let i = 0; i < 75; i++){
-        allarraystr += String(array[i]) + "<br>"
+        allarraystr += String(i+1) + ":" + String(array[i]) + "<br>"
     }
 
     document.getElementById("allarray").innerHTML = allarraystr.replace(/\n/g, "<br>")
@@ -57,7 +57,7 @@ $('#show').click( function(){
     allarraystr = ""
 
     for(let i = 0; i < 75; i++){
-        allarraystr += String(array[i]) + "<br>"
+        allarraystr += String(i+1) + ":" + String(array[i]) + "<br>"
     }
 
     document.getElementById("allarray").innerHTML = allarraystr.replace(/\n/g, "<br>")
