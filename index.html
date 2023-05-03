@@ -22,7 +22,14 @@
 
     <body>
 
-        <h1>Random Number Generator</h1>
+        <h1 id="title">Random Number Generator</h1>
+        <div id="blackbg"></div>
+        <div id="setting">
+            <label>Set The Maximum Number Of Random Values (2-10000)</label>
+            <input id="maxnum" type="number" min="2" max="10000" value="100"/>
+            <button id="close">Regenerate</button>
+            <button id="back">Back&emsp;(Non-Regenerate)</button>
+        </div>
 
         <button id="generate">Generate</button>
 
@@ -34,6 +41,21 @@
         <button id="show">Show All</button>
 
         <p id="allarray"></p>
+
+        <div class="container">
+            <div class="container-left">
+                <button id="generate-2">Generate</button>
+                <h2 id="num-2"></h2>
+                <p id="showing-2"><br></p>
+            </div>
+
+            <div class="container-right">
+                <button id="next-2">Next</button>
+                <button id="prev-2">Prev.</button>
+                <button id="show-2">Show All</button>
+                <p id="allarray-2"></p>
+            </div>
+        </div>
 
         <!--jQueryと自作jsの読み込み-->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity = "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin = "anonymous"></script>

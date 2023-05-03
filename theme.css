@@ -1,24 +1,8 @@
 @charset "UTF-8";
 
-html{
-    font-size: 16px;
-}
-
-/*スマホ用*/
-@media screen and (max-width: 480px){
-    html{
-        font-size: 6px;
-    }
-}
-
-/*タブレット用*/
-@media screen and (max-width: 959px){
-
-}
-
-/*共通*/
 html, body{
     width: 100%;
+    height: 100%;
     -webkit-text-size-adjust: 100%;
 
     margin: 0;
@@ -29,6 +13,12 @@ html, body{
     font-family: 'Raleway', 'Montserrat' sans-serif;
 
     line-height: 1.7;
+    
+    font-size: 16px;
+}
+
+body > button, body > h2, body > #showing, body > #allarray{
+    display: none;
 }
 
 h1{
@@ -37,7 +27,7 @@ h1{
 
     margin-right: 5%;
     margin-left: 5%;
-    margin-top: 2.5%;
+    margin-top: 1%;
 
     border-radius: 100px;
 
@@ -47,15 +37,163 @@ h1{
     font-size: 3rem;
     font-family: Raleway, sans-serif;
     color: #ffffff;
+
+    cursor: pointer;
 }
 
-#generate{
+#blackbg{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+
+    width: 100%;
+    height: 100%;
+    background-color: #0d102988;
+}
+
+#blackbg.panelactive{
+    display: block;
+}
+
+#setting{
+    display: none;
+    position: absolute;
+    z-index: 5;
+
+    width: 60%;
+    height: 45%;
+
+    margin: 5% 20%;
+
+    background-color: #ffffff;
+    border: #0d1029 1px solid;
+    border-radius: 30px;
+}
+
+#setting.panelactive{
+    display: block;
+}
+
+#setting label{
+    display: inline-block;
+    width: 70%;
+
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2.5%;
+
+    font-size: 1.75rem;
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    color: #0d1029;
+
+}
+
+#maxnum{
+    display: inline-block;
+    width: 50%;
+    height: 10vh;
+
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1.5%;
+
+    font-size: 2rem;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    color: #ffffff;
+
+    border-radius: 20px;
+    border: #0d1029 1px solid;
+    background-color: #0d1029;
+}
+
+#maxnum:focus{
+    color: #0d1029;
+    background-color: #ffffff;
+}
+
+#close{
+    display: block;
+    width: 30%;
+    height: 7.5vh;
+
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 5%;
+
+    font-size: 1.75rem;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    color: #ffffff;
+
+    border-radius: 20px;
+    border: #0d1029 1px solid;
+    background-color: #0d1029;
+}
+
+#close:active{
+    color: #0d1029;
+    background-color: #ffffff;
+}
+
+#back{
+    display: block;
+    width: 30%;
+    height: 5vh;
+
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1.5%;
+
+    font-size: 1.25rem;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+    color: #ffffff;
+
+    border-radius: 20px;
+    border: #0d1029 1px solid;
+    background-color: #0d1029;
+}
+
+#back:active{
+    color: #0d1029;
+    background-color: #ffffff;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%
+}
+
+.container-left{
+    width: 50%;
+
+    margin: 0;
+}
+
+#generate-2{
     width: 50%;
     height: 7vh;
 
     margin-right: 25%;
     margin-left: 25%;
-    margin-top: 5%;
+    margin-top: 7.5%;
 
     border: solid #0d1029 1px;
     border-radius: 20px;
@@ -64,27 +202,26 @@ h1{
     color: #0d1029;
     font-family: Raleway, sans-serif;
     font-weight: normal;
-    font-size: 4rem;
+    font-size: 2rem;
 
     cursor: pointer;
 }
 
-#generate:active{
+#generate-2:active{
     background-color: #0d1029;
     color: #ffffff;
 }
 
 h2{
-    display: inline-block;
-    width: 40vh;
-    height: 40vh;
+    width: 50vh;
+    height: 50vh;
 
-    margin-right: calc(calc(100vw - 40vh) / 2);
-    margin-left: calc(calc(100vw - 40vh) / 2);
-    margin-top: 5%;
+    margin-right: calc(calc(50vw - 50vh) / 2);
+    margin-left: calc(calc(50vw - 50vh) / 2);
+    margin-top: 7.5%;
 
     border: #0d1029 solid 1px;
-    border-radius: 20vh;
+    border-radius: 25vh;
 
     background-color: #0d1029;
 
@@ -96,22 +233,13 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
-
-    cursor: pointer;
 }
 
-h2:active{
-    background-color: #ffffff;
-    color: #0d1029;
-}
-
-#showing{
+#showing-2{
     display: inline-block;
-    width: 40vh;
+    width: 100%;
 
-    margin-right: calc(calc(100vw - 40vh) / 2);
-    margin-left: calc(calc(100vw - 40vh) / 2);
-    margin-top: 2.5%;
+    margin: 0;
 
     text-align: center;
     font-size: 3.5rem;
@@ -121,66 +249,96 @@ h2:active{
     color: #0d1029;
 }
 
-#prev{
+.container-right{
+    width: 50%;
+
+    margin: 0;
+}
+
+#next-2{
     width: 30%;
-    height: 5vh;
+    height: 6vh;
 
     margin-right: 35%;
     margin-left: 35%;
-    margin-top: 2.5%;
+    margin-top: 3.5%;
 
     border: #0d1029 solid 1px;
     border-radius: 20px;
     background-color: #0d1029;
 
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Raleway, sans-serif;
 
     cursor: pointer;
 }
 
-#prev:active{
+#next-2:active{
     background-color: #ffffff;
     color: #0d1029;
 }
 
-#show{
+#prev-2{
+    width: 30%;
+    height: 6vh;
+
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-top: 3.5%;
+
+    border: #0d1029 solid 1px;
+    border-radius: 20px;
+    background-color: #0d1029;
+
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: Raleway, sans-serif;
+
+    cursor: pointer;
+}
+
+#prev-2:active{
+    background-color: #ffffff;
+    color: #0d1029;
+}
+
+#show-2{
     width: 40%;
-    height: 7vh;
+    height: 6vh;
 
     margin-right: 30%;
     margin-left: 30%;
-    margin-top: 5%;
+    margin-top: 3.5%;
 
     border: #0d1029 solid 1px;
     border-radius: 20px;
     background-color: #0d1029;
 
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 2rem;
     font-family: Raleway, sans-serif;
 
     cursor: pointer;
 }
 
-#show:active{
+#show-2:active{
     background-color: #ffffff;
     color: #0d1029;
 }
 
-#allarray{
+#allarray-2{
     display: none;
 }
 
-#allarray.active{
+#allarray-2.active{
     display: inline-block;
     
     width: 30%;
+    max-height: 45vh;
     margin-right: 35%;
     margin-left: 35%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2.5%;
 
     padding-top: 2.5%;
     padding-bottom: 2.5%;
@@ -189,7 +347,208 @@ h2:active{
     background-color: #0d1029;
 
     color: #ffffff;
-    font-size: 3rem;
+    font-size: 1.75rem;
     font-family: Montserrat, sans-serif;
     text-align: center;
+    font-variant-numeric: tabular-nums;
+    overflow-y: auto;
+}
+
+/*タブレット用*/
+@media screen and (max-width: 959px){
+
+}
+
+/*スマホ用*/
+@media screen and (max-width: 480px){
+    html, body{
+        width: 100%;
+        -webkit-text-size-adjust: 100%;
+    
+        margin: 0;
+        padding: 0;
+    
+        background-color: #ffffff;
+    
+        font-family: 'Raleway', 'Montserrat' sans-serif;
+    
+        line-height: 1.7;
+        
+        font-size: 6px;
+    }
+
+    body > button, body > #showing{
+        display: block;
+    }
+
+    body > h2{
+        display: flex;
+    }
+    
+    h1{
+        display: inline-block;
+        width: 90%;
+    
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 2.5%;
+    
+        border-radius: 100px;
+    
+        background-color: #0d1029;
+    
+        text-align: center;
+        font-size: 3rem;
+        font-family: Raleway, sans-serif;
+        color: #ffffff;
+    }
+    
+    #generate{
+        width: 50%;
+        height: 7vh;
+    
+        margin-right: 25%;
+        margin-left: 25%;
+        margin-top: 5%;
+    
+        border: solid #0d1029 1px;
+        border-radius: 20px;
+        background-color: #ffffff;
+    
+        color: #0d1029;
+        font-family: Raleway, sans-serif;
+        font-weight: normal;
+        font-size: 4rem;
+    
+        cursor: pointer;
+    }
+    
+    #generate:active{
+        background-color: #0d1029;
+        color: #ffffff;
+    }
+    
+    h2{
+        width: 40vh;
+        height: 40vh;
+    
+        margin-right: calc(calc(100vw - 40vh) / 2);
+        margin-left: calc(calc(100vw - 40vh) / 2);
+        margin-top: 5%;
+    
+        border: #0d1029 solid 1px;
+        border-radius: 20vh;
+    
+        background-color: #0d1029;
+    
+        text-align: center;
+        font-size: 10rem;
+        font-family: Montserrat, sans-serif;
+        color: #ffffff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        cursor: pointer;
+    }
+    
+    h2:active{
+        background-color: #ffffff;
+        color: #0d1029;
+    }
+    
+    #showing{
+        display: inline-block;
+        width: 40vh;
+    
+        margin-right: calc(calc(100vw - 40vh) / 2);
+        margin-left: calc(calc(100vw - 40vh) / 2);
+        margin-top: 2.5%;
+    
+        text-align: center;
+        font-size: 3.5rem;
+        font-family: Montserrat, sans-serif;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        color: #0d1029;
+    }
+    
+    #prev{
+        width: 30%;
+        height: 5vh;
+    
+        margin-right: 35%;
+        margin-left: 35%;
+        margin-top: 2.5%;
+    
+        border: #0d1029 solid 1px;
+        border-radius: 20px;
+        background-color: #0d1029;
+    
+        color: #ffffff;
+        font-size: 3rem;
+        font-family: Raleway, sans-serif;
+    
+        cursor: pointer;
+    }
+    
+    #prev:active{
+        background-color: #ffffff;
+        color: #0d1029;
+    }
+    
+    #show{
+        width: 40%;
+        height: 7vh;
+    
+        margin-right: 30%;
+        margin-left: 30%;
+        margin-top: 5%;
+    
+        border: #0d1029 solid 1px;
+        border-radius: 20px;
+        background-color: #0d1029;
+    
+        color: #ffffff;
+        font-size: 3rem;
+        font-family: Raleway, sans-serif;
+    
+        cursor: pointer;
+    }
+    
+    #show:active{
+        background-color: #ffffff;
+        color: #0d1029;
+    }
+    
+    #allarray{
+        display: none;
+    }
+    
+    #allarray.active{
+        display: inline-block;
+        
+        width: 30%;
+        margin-right: 35%;
+        margin-left: 35%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+    
+        border-radius: 30px;
+        background-color: #0d1029;
+    
+        color: #ffffff;
+        font-size: 3rem;
+        font-family: Montserrat, sans-serif;
+        text-align: center;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .container{
+        display: none;
+    }
 }
